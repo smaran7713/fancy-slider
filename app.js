@@ -70,7 +70,8 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
-  const duration = document.getElementById('duration') || 1000;
+  const duration = document.getElementById('duration');
+  
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -83,7 +84,7 @@ const createSlider = () => {
     timer = setInterval(function () {
       slideIndex++;
       changeSlide(slideIndex);
-    },  duration);
+    },  duration.value);
 };
 
 // change slider index 
@@ -128,13 +129,12 @@ searchBtn.addEventListener('click', function () {
 
 sliderBtn.addEventListener('click', function () {
   createSlider();
-  
+
 });
 
 
-// timer = setInterval(function () {
-//   slideIndex++;
-//   changeSlide(slideIndex);
-// },  duration);
 
 
+   // if (slideIndex.length < 0) {
+        //   alert('negative number not allow.')
+        //   ;}
